@@ -2,8 +2,8 @@ from nltk.chat.util import Chat, reflections
 
 pairs = [
     [
-        r"my name is (.*)| (.*?)",
-        ["Hello %1, How are you today ?",]
+        r"my name is (.*)",
+        ["Hello %1, How are you today ?"]
     ],
     [
         r"hi|hey|hello",
@@ -31,7 +31,7 @@ pairs = [
     ],
     [
         r"(.*) age?",
-        ["I'm a computer program dudenSeriously you are asking me this?",]
+        ["I'm 23",]
     ],
     [
         r"what (.*) want ?",
@@ -43,7 +43,7 @@ pairs = [
     ],
     [
         r"(.*) (location|city) ?",
-        ['Indore, Madhya Pradesh',]
+        ['Concepcion del Uruguay, Argentina',]
     ],
     [
         r"how is weather in (.*)?",
@@ -62,24 +62,48 @@ pairs = [
         ["I'm a computer program, so I'm always healthy ",]
     ],
     [
-        r"(.*) (sports|game) ?",
-        ["I'm a very big fan of Football",]
-    ],
-    [
-        r"who (.*) sportsperson ?",
-        ["Messy","Ronaldo","Rooney"]
+        r"who (.*) (football player|player) ?",
+        ["Messi","Ronaldo","Rooney"]
     ],
     [
         r"who (.*) (moviestar|actor)?",
         ["Brad Pitt"]
     ],
     [
-        r"i am looking for online guides and courses to learn data science, can you suggest?",
-        ["Crazy_Tech has many great articles with each step explanation along with code, you can explore"]
+        r"what (.*) (chances|chance)(.*)?",
+        ["They have a great shot, but it's gonna be difficult"]
+    ],
+    [
+        r"what (.*) (fight|intercation)(.*)?",
+        ["It is a bad look for the sport"]
+    ],
+    [
+        r"(what sports) (.*) (like)?",
+        ["I like Tennis but im a big fan of foobtall"]
+    ],
+    [
+        r"what (.*) (think|thought) (.*) (football)?",
+        ["I believe its the best sport ever invented. Either to watch or play"]
+    ],
+    [
+        r"(what club) (.*) (fan|support)?",
+        ["Im a fan of Boca Juniors", "Im a fan of River Plate",]
+    ],
+    [
+        r"when (.*) (start watching|start playing)(.*)?",
+        ["I got into football when my dad bought me a ball in my 7th birthday.",]
+    ],
+    [
+        r"why (.*) (start watching|start playing|do you like)(.*)?",
+        ["I just love running and scoring goals, watching big matches and feeling the passion and effort that the sport gives you",]
+    ],
+    [
+        r"which (.*) (fondest memory|fondest memories)(.*)?",
+        ["I'd say the first time I saw Boca win a clasico against River","I'd say the first time I saw River win a clasico against Boca"]
     ],
     [
         r"quit",
-        ["BBye take care. See you soon :) ","It was nice talking to you. See you soon :)"]
+        ["Bye take care. See you soon :) ","It was nice talking to you. See you soon"]
     ],
 ]
 
