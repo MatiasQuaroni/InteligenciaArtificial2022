@@ -58,11 +58,26 @@ def shellSort(arr):
 
 arr = random.randint(100, size=(1024))
 
-t1_start = process_time()
+bs_start = process_time()
+bubbleSort(arr)
+bs_stop = process_time() 
+print("Elapsed time during the bubblesort in seconds:", (bs_stop-bs_start)) 
+
+ss_start = process_time()
+selectionSort(arr,len(arr))
+ss_stop = process_time()   
+print("Elapsed time during selectionsort in seconds:", (ss_stop-ss_start)) 
+
+shs_start = process_time()
 shellSort(arr)
-t1_stop = process_time()
-print("Elapsed time:", t1_stop, t1_start)    
-print("Elapsed time during the whole program in seconds:", (t1_stop-t1_start)) 
+shs_stop = process_time()   
+print("Elapsed time during the shellsort in seconds:", (shs_stop-shs_start)) 
+
+qs_start = process_time()
+quicksort(0, len(arr)-1, arr)
+qs_stop = process_time()   
+print("Elapsed time during the quicksort in seconds:", (qs_stop-qs_start)) 
+
 #shellSort(arr)
 #bubbleSort(arr)
 #selectionSort(arr,len(arr))
