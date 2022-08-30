@@ -23,23 +23,22 @@ def selectionSort(array, size):
                 min_index = j
         (array[ind], array[min_index]) = (array[min_index], array[ind])
 #quickSort
-def partition(l, r, nums):
-    pivot, ptr = nums[r], l
-    for i in range(l, r):
-        if nums[i] <= pivot:
-            nums[i], nums[ptr] = nums[ptr], nums[i]
-            ptr += 1
-    nums[ptr], nums[r] = nums[r], nums[ptr]
-    return ptr
-  
-def quicksort(l, r, nums):
-    if len(nums) == 1:  
-        return nums
-    if l < r:
-        pi = partition(l, r, nums)
-        quicksort(l, pi-1, nums)
-        quicksort(pi+1, r, nums) 
-    return nums
+def quicksort(array):
+    less = []
+    equal = []
+    greater = []
+    if len(array) > 1:
+        pivot = array[0]
+        for x in array:
+            if x < pivot:
+                less.append(x)
+            elif x == pivot:
+                equal.append(x)
+            elif x > pivot:
+                greater.append(x)
+        return quicksort(less)+equal+quicksort(greater)
+    else:  
+        return array
 #shellSort
 def shellSort(arr): 
     n = len(arr)
@@ -57,6 +56,9 @@ def shellSort(arr):
         gap //= 2
 
 arr = random.randint(100, size=(1024))
+arr1 = random.randint(100, size=(1024))
+arr2 = random.randint(100, size=(1024))
+arr3 = random.randint(100, size=(1024))
 
 bs_start = process_time()
 bubbleSort(arr)
@@ -64,17 +66,17 @@ bs_stop = process_time()
 print("Elapsed time during the bubblesort in seconds:", (bs_stop-bs_start)) 
 
 ss_start = process_time()
-selectionSort(arr,len(arr))
+selectionSort(arr1,len(arr1))
 ss_stop = process_time()   
 print("Elapsed time during selectionsort in seconds:", (ss_stop-ss_start)) 
 
 shs_start = process_time()
-shellSort(arr)
+shellSort(arr2)
 shs_stop = process_time()   
 print("Elapsed time during the shellsort in seconds:", (shs_stop-shs_start)) 
 
 qs_start = process_time()
-quicksort(0, len(arr)-1, arr)
+quicksort(arr3)
 qs_stop = process_time()   
 print("Elapsed time during the quicksort in seconds:", (qs_stop-qs_start)) 
 
