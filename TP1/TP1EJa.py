@@ -102,6 +102,14 @@ pairs = [
         ["I'd say the first time I saw Boca win a clasico against River","I'd say the first time I saw River win a clasico against Boca"]
     ],
     [
+        r"is there (.*) (hate|club that u hate)(.*)?",
+        ["Well since im a fan of Boca, I love winning against River","Well since im a fan of River, I love winning against Boca"]
+    ],    
+    [
+        r"which (.*) (biggest rival|rival)(.*)?",
+        ["Boca for sure","River for sure"]
+    ], 
+    [
         r"quit",
         ["Bye take care. See you soon :) ","It was nice talking to you. See you soon"]
     ],
